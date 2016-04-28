@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get '.well-known/cds-services', to: 'cds_service#registry', via: [:get]
+
+  match 'cds-service/static', to: 'cds_service#static', via: [:get, :post], as: 'static_service'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
