@@ -1,4 +1,7 @@
 class CdsServiceController < ApplicationController
+  # Since this doesn't leverage any HTML, we don't need CSRF for our REST API calls
+  skip_before_action :verify_authenticity_token
+
   def static
     card1 = Card.new(summary: 'Success Card', indicator: 'success',
                      source: Card::Link.new(label: 'Static CDS Service', url: 'http://example.com'))
