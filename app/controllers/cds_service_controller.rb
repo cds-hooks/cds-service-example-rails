@@ -31,9 +31,10 @@ class CdsServiceController < ApplicationController
           name: 'Static CDS Service',
           description: 'An example static CDS service',
           id: 'static',
-          prefetch: [
-            'retrieve-patients': 'Patient?name=test'
-          ]
+          prefetch: {
+            'patient': 'Patient/{{Patient.id}}',
+            'medications': 'MedicationOrder?patient={{Patient.id}}'
+          }
         }
       ]
     }
