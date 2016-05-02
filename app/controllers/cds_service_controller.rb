@@ -30,7 +30,10 @@ class CdsServiceController < ApplicationController
           hook: 'patient-view',
           name: 'Static CDS Service',
           description: 'An example static CDS service',
-          url: static_service_url
+          id: 'static',
+          prefetch: [
+            'retrieve-patients': 'Patient?name=test'
+          ]
         }
       ]
     }
