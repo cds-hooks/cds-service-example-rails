@@ -7,8 +7,8 @@ class CdsServiceController < ApplicationController
                      source: Card::Link.new(label: 'Static CDS Service', url: 'http://example.com'))
     card1.tap do |c|
       c.detail = 'This is a test of a static success card.'
-      c.links << Card::Link.new(label: 'Google', url: 'http://google.com')
-      c.links << Card::Link.new(label: 'Yahoo!', url: 'http://yahoo.com')
+      c.links << Card::Link.new(label: 'Google', url: 'https://google.com')
+      c.links << Card::Link.new(label: 'Github', url: 'https://github.com')
     end
 
     source = Card::Link.new(label: 'Static CDS Service')
