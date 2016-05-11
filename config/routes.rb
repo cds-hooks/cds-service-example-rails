@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '.well-known/cds-services', to: 'cds_service#registry', via: [:get]
+  get 'cds-services', to: 'cds_service#registry', via: [:get]
 
   match 'cds-services/static', to: 'cds_service#static', via: [:get, :post], as: 'static_service'
 
